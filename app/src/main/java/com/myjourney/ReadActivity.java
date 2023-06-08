@@ -2,6 +2,7 @@ package com.myjourney;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -20,6 +21,8 @@ public class ReadActivity extends AppCompatActivity {
 
     @InjectView
     private TextView txtRead;
+    @InjectView
+    private Button btnExitRead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +53,7 @@ public class ReadActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e(TAG, e.getMessage());
         }
+
+        btnExitRead.setOnClickListener(v -> finish());
     }
 }
